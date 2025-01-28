@@ -13,17 +13,4 @@
         <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.github.Maribovi</groupId>
-            <artifactId>AQA</artifactId>
-            <version>master</version>
-        </dependency>
-    </dependencies>
 </project>
