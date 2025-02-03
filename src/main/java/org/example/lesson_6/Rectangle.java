@@ -3,8 +3,8 @@ package org.example.lesson_6;
 public class Rectangle implements Geometry {
     public String colourFilling;
     public String colourBoundary;
-    int a;
-    int b;
+    public int a;
+    public int b;
 
     Rectangle(String colourFilling, String colourBoundary, int a, int b) {
         this.colourFilling = colourFilling;
