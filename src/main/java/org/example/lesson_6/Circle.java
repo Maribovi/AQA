@@ -3,7 +3,7 @@ package org.example.lesson_6;
 public class Circle implements Geometry {
     public String colourFilling;
     public String colourBoundary;
-    int r;
+    public int r;
 
     Circle(String colourFilling, String colourBoundary, int r) {
         this.colourFilling = colourFilling;
