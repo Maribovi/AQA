@@ -3,9 +3,9 @@ package org.example.lesson_6;
 public class Triangle implements Geometry {
     public String colourFilling;
     public String colourBoundary;
-    int a;
-    int b;
-    int c;
+    public int a;
+    public int b;
+    public int c;
 
     Triangle(String colourFilling, String colourBoundary, int a, int b, int c) {
         this.colourFilling = colourFilling;
