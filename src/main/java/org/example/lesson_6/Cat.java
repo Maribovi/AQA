@@ -1,9 +1,9 @@
 package org.example.lesson_6;
 
 public class Cat extends Animal {
-    static int counterCats = 0;
-    static int food = 0;
-    boolean isHungry = true;
+    public static int counterCats = 0;
+    public static int food = 0;
+    public boolean isHungry = true;
 
     public Cat(String name) {
         super(name);
