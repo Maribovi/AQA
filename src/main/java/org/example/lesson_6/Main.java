@@ -3,7 +3,6 @@ package org.example.lesson_6;
 import static org.example.lesson_6.Animal.catArray;
 import static org.example.lesson_6.Animal.counterAnimals;
 import static org.example.lesson_6.Cat.counterCats;
-import static org.example.lesson_6.Cat.fillInCatFoodToBowl;
 import static org.example.lesson_6.Dog.counterDogs;
 
 public class Main {
@@ -24,11 +23,14 @@ public class Main {
         System.out.println("Всего собак: " + counterDogs + " шт.");
         System.out.println("Всего кошек: " + counterCats + " шт.");
 
-        fillInCatFoodToBowl(100);
-        catArray[0].eat(10);
-        catArray[1].eat(30);
-        catArray[2].eat(50);
-        catArray[1].eat(30);
+        CatBowl bowl = new CatBowl();
+        bowl.fillInCatFoodToBowl(100);
+        System.out.println("Количество еды: " + bowl.getFoodAmount());
+
+        catArray[0].eat(10, bowl);
+        catArray[1].eat(30, bowl);
+        catArray[2].eat(50, bowl);
+        catArray[1].eat(30, bowl);
         catArray[0].satiety();
         catArray[1].satiety();
         catArray[2].satiety();

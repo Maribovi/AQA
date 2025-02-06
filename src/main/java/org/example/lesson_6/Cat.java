@@ -1,9 +1,8 @@
 package org.example.lesson_6;
 
 public class Cat extends Animal {
-    static int counterCats = 0;
-    static int food = 0;
-    boolean isHungry = true;
+    public static int counterCats = 0;
+    public boolean isHungry = true;
 
     public Cat(String name) {
         super(name);
@@ -24,17 +23,15 @@ public class Cat extends Animal {
         System.out.println(name + " не умеет плавать.");
     }
 
-    public static int fillInCatFoodToBowl(int addFood) {
-        food += addFood;
-        return food;
-    }
-
-    public int eat(int catMeal) {
-        if ((food - catMeal) < 0) {
-            return food;
+    public int eat(int catMeal, CatBowl bowl) {
+        int foodAmountInBowl = bowl.getFoodAmount();
+        if ((foodAmountInBowl - catMeal) < 0) {
+            System.out.println("В миске мало еды.");
+            return foodAmountInBowl;
         } else {
             this.isHungry = false;
-            return food -= catMeal;
+            bowl.fillInCatFoodToBowl(-catMeal);
+            return foodAmountInBowl - catMeal;
         }
     }
 

@@ -1,7 +1,7 @@
 package org.example.lesson_6;
 
 public abstract class Animal {
-    String name;
+    public String name;
     public static int counterAnimals = 0;
 
     public Animal(String name) {
