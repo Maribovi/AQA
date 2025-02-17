@@ -1,14 +1,14 @@
 package org.example;
 
 public class Employee {
-    String name;
-    String familyName;
-    String fathersName;
-    String position;
-    String email;
-    String phone;
-    long salary;
-    int age;
+    public String name;
+    public String familyName;
+    public String fathersName;
+    public String position;
+    public String email;
+    public String phone;
+    public long salary;
+    public int age;
 
     Employee(String name, String familyName, String fathersName,
              String position, String email, String phone, long salary, int age) {
