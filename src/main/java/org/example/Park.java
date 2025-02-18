@@ -19,6 +19,7 @@ public class Park {
         Park.Attraction bumperCars = funPark.new Attraction("Автодром",
                 "9:00 - 18:00",
                 "600 рублей");
+
         System.out.println(funPark.getName() + "\n" + "\n" + merryGoRound);
         System.out.println();
         System.out.println(bumperCars);
