@@ -1,15 +1,22 @@
-package org.example.selenium;
+package selenium;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.time.Duration;
+
+import static org.testng.Assert.assertTrue;
 
 public class ButtonTest {
     private WebDriver driver;
@@ -17,12 +24,13 @@ public class ButtonTest {
     @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
     @Test
-    public void testLink() {
+    public void testButton() {
         driver.manage().window().maximize();
         driver.get("https://www.mts.by/");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -49,18 +57,14 @@ public class ButtonTest {
 
             wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             WebElement paymentWidget = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".bepaid-app")));
-            if (paymentWidget.isDisplayed()) {
-                System.out.println("Платежный виджет появился на странице.");
-            } else {
-                System.out.println("Платежный виджет не появился.");
-            }
+            assertTrue(paymentWidget.isDisplayed(), "Платежный виджет не появился.");
         }
     }
 
-        @AfterClass
-        public void tearDown () {
-            if (driver != null) {
-                driver.quit();
-            }
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
         }
     }
+}
