@@ -1,4 +1,4 @@
-package org.example.selenium;
+package selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -11,6 +11,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertTrue;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import java.time.Duration;
 
 public class LogoTest {
@@ -19,6 +23,7 @@ public class LogoTest {
     @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
@@ -34,11 +39,21 @@ public class LogoTest {
         } catch (TimeoutException e) {
         } finally {
             wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement block = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[alt='Visa']")));
-            WebElement block1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[alt='Verified By Visa']")));
-            WebElement block2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[alt='MasterCard']")));
-            WebElement block3 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[alt='MasterCard Secure Code']")));
-            WebElement block4 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[alt='Белкарт']")));
+
+            WebElement visaLogo = driver.findElement(By.cssSelector("img[alt='Visa']"));
+            assertTrue(visaLogo.isDisplayed(), "Логотип Visa не отображается");
+
+            WebElement verifiedByVisaLogo = driver.findElement(By.cssSelector("img[alt='Verified By Visa']"));
+            assertTrue(verifiedByVisaLogo.isDisplayed(), "Логотип Verified By Visa не отображается");
+
+            WebElement masterCardLogo = driver.findElement(By.cssSelector("img[alt='MasterCard']"));
+            assertTrue(masterCardLogo.isDisplayed(), "Логотип MasterCard не отображается");
+
+            WebElement masterCardSecureCodeLogo = driver.findElement(By.cssSelector("img[alt='MasterCard Secure Code']"));
+            assertTrue(masterCardSecureCodeLogo.isDisplayed(), "Логотип MasterCard Secure Code не отображается");
+
+            WebElement belkartLogo = driver.findElement(By.cssSelector("img[alt='Белкарт']"));
+            assertTrue(belkartLogo.isDisplayed(), "Логотип Белкарт не отображается");
         }
     }
 
