@@ -1,10 +1,10 @@
-package testng;
+package org.example.junit;
 
 import org.example.lesson_14_junit_5.Factorial;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class FactorialEqualityTestng {
+public class FactorialEqualityTests {
 
     @Test
     public void testEqualityFactorial() {

@@ -1,7 +1,9 @@
+package org.example.junit;
+
 import org.example.lesson_14_junit_5.AreaTriangle;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 public class AreaTriangleEqualityTests {
     String expected = "2,90";

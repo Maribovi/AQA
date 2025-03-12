@@ -1,4 +1,4 @@
-package testng;
+package org.example.testng;
 
 import org.example.lesson_14_junit_5.Factorial;
 import org.testng.Assert;

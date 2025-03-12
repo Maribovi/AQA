@@ -1,5 +1,7 @@
-import org.junit.Test;
+package org.example.junit;
+
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import static org.example.lesson_14_junit_5.Count.count;
 

@@ -1,6 +1,8 @@
+package org.example.junit;
+
 import org.example.lesson_14_junit_5.Factorial;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class FactorialExceptionTest {
     @Test
